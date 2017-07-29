@@ -1,3 +1,8 @@
+# Required
+
+- node >= 6.x
+- npm >= 3.x
+
 # react-sandbox
 
 ```
