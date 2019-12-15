@@ -1,10 +1,15 @@
 import React from 'react';
 import {render} from 'react-dom';
+import {Clock} from './components/Clock';
+import {Todo} from './components/Todo';
 
-class Hello extends React.Component {
+class App extends React.Component {
   render() {
-    return <p>Hello, React!</p>;
+    return (<div>
+      <Clock />
+      <Todo />
+    </div>);
   }
 }
 
-render(<Hello/>, document.getElementById('root'));
+render(<App/>, document.getElementById('root'));
