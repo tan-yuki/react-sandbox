@@ -1,31 +1,27 @@
-import path from 'path'
+const path = require('path');
 
 const src  = path.resolve(__dirname, 'src')
 const dist = path.resolve(__dirname, 'dist')
 
-export default {
+module.exports = {
+  mode: 'development',
+
   entry: src + '/index.js',
 
   output: {
     path: dist,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      }
-    ]
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' }
+    ],
   },
 
   resolve: {
     extensions: ['*', '.js']
   },
 
-  devtool: '#inline-source-map',
-
-  plugins: []
-}
+  devtool: 'source-map',
+};

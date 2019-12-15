@@ -1,3 +1,6 @@
 require('babel-core/register');
-module.exports = require('./webpack.config.dev');
+let config = require('./webpack.config.dev');
+config.mode = 'production';
+
+module.exports = config;
 
